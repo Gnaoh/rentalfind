@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require retsly
 //= require main
 //= require turbolinks
 //= require_tree .
