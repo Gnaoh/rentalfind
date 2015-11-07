@@ -252,3 +252,46 @@ Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bd
 
 
 Started GET "/assets/property.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-07 10:22:37 -0800
+
+
+Started GET "/" for ::1 at 2015-11-07 10:40:35 -0800
+Processing by PropertyController#index as HTML
+  Rendered property/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (couldn't find file 'googlemap.js' with type 'application/javascript'):
+     5: 
+     6:   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_SVXJl8ze-lhdvV-ZZ9tq5TELqNwTDpU&callback=initMap"></script>
+     7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+     8:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+     9:   <%= csrf_meta_tags %>
+    10: </head>
+    11: <body>
+  app/assets/javascripts/application.js:15
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2134095176967869265_70352494687600'
+
+
+  Rendered /Users/kylehoang/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.3ms)
+  Rendered /Users/kylehoang/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/kylehoang/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kylehoang/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (61.4ms)
+  Rendered /Users/kylehoang/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kylehoang/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kylehoang/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/kylehoang/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kylehoang/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (49.6ms)
+  Rendered /Users/kylehoang/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/kylehoang/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kylehoang/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (113.0ms)
+
+
+Started GET "/" for ::1 at 2015-11-07 10:41:33 -0800
+Processing by PropertyController#index as HTML
+  Rendered property/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 154ms (Views: 153.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main.self-f62d2cfe5b76bc58a745032ddf03f5c321891cbde222e6aeabf855db243bfa97.css?body=1" for ::1 at 2015-11-07 10:41:33 -0800
+
+
+Started GET "/assets/main.self-e77acf61723221c548a2d596b026e860220b00b0eab669b834dc8ab7518bba61.js?body=1" for ::1 at 2015-11-07 10:41:33 -0800

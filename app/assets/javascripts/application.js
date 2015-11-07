@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require googlemap.js
+//= require main
 //= require turbolinks
 //= require_tree .
