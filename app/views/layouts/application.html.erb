@@ -7,11 +7,12 @@
   <%= csrf_meta_tags %>
 
   <!--   JavaScript Library -->
-	<script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhHQJKWUx4T-o-v8a0xZ200NGpmzlOuQA&callback=initMap">
-    </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhHQJKWUx4T-o-v8a0xZ200NGpmzlOuQA&signed_in=true&libraries=places&callback=initMap"
+        async defer></script>
+
 </head>
 <body>
+<%= render "partials/nav" %>
 
 <%= yield %>
 

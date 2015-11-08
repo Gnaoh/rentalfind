@@ -1,4 +1,3 @@
-<ce<p class="navbar-text">Rental Find</a></p>
 
 <div id="map"></div>
 
@@ -10,13 +9,15 @@
 			           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			           <center><h1 class="modal-title" >100% Cash Positive</h1><br></center>
 			   </div>
-			   <center> <h4 id="myModalLabel"></h4></center>
+			   <center><h4 id="address"></h4></center>
+			   <center><h4 id="price"></h4></center>
 	      <div class='modal-body'>
 					<ul class="list-group">
-					  <li class="list-group-item">Rental Income: <p id="rentalIncome"></p></li>
-					  <li class="list-group-item">Monthly Mortgage Payment: <p id="mortgagePayment"></p></li>
-					  <li class="list-group-item">Property Taxes: <p id="taxes"></p></li>
-					  <li class="list-group-item">Homeowners Insurance: <p id="insurance"></p></li>
+					  <li class="list-group-item">Rental Income / Month: <p id="rentalIncome" class='pull-right'></p></li>
+					  <li class="list-group-item">Less Mortgage Payment / Month: <p id="mortgagePayment" class='pull-right'></p></li>
+					  <li class="list-group-item">Less Property Taxes / Month: <p id="taxes" class='pull-right'></p></li>
+					  <li class="list-group-item">Less Homeowners Insurance: <p id="insurance" class='pull-right'></p></li>
+					  <li class="list-group-item">Equals Monthly Net Cashflow: <p id="cashflow" class='pull-right'></p></li>
 					</ul>
 				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 				  <div class="panel panel-default">
@@ -56,27 +57,3 @@
    		</div>
  	</div>
 </div>
-		
-
-<!-- 
-       	<div class='summary'>
-	        <div class='snapshot'><p class='formatting'>Monthly Cashflow:</p><p class='cashflow'></div>
-
-
-	        <div class='snapshot'>US$120000</div>
-	        <div class='snapshot'>5.3%</div>
-	    </div>
-
-"<div class='delayed'><p id='status'>Status:<p>" + "<p id='statuses'>" + flightstats.status + " - Delayed " + data.flightStatuses[i].delays.arrivalGateDelayMinutes + " minutes</p></div>"
-
-
-	    <div class='mortgage'>
-	        <p class='payments'>US$2,500 / month</p>
-	    </div>
-
-	    <div class='financials'>
-	        <p class='insurance'>US$2,500 / month</p>
-	    </div>	    
- -->
-
-

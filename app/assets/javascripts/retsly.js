@@ -17,18 +17,18 @@ function initMap() {
 				price = data.bundle[i].price;
 				description = data.bundle[i].publicRemarks;
 				square_footage = data.bundle[i].squareFootage;
-				// console.log(square_footage)
-				// price_per_sq_ft = (price / square_footage)
-				// console.log(price_per_sq_ft)
 				monthlyPayment = price * (0.004167* first /(first - 1));
+
+				
 					var marker = new google.maps.Marker({
 	    				map: map,
 	    				position: {lat, lng},
 	    				address: address,
 	    				price: price,
 	    				monthlyPayment: Math.round(monthlyPayment),
-	    				tax_annual: tax_annual,
-	    				description: description
+	    				monthly_tax: Math.round((tax_annual / 12)),
+	    				description: description,
+	    				// cashflow = ( ??? - monthlyPayment - monthly_tax - ???)
 	  				});
 				
 // Create a marker and set its position.
@@ -39,12 +39,12 @@ function initMap() {
     				$('#myModal').modal('show')
 
     				// ADDRESS
-    				$('#myModalLabel').html('');
-	    			$('#myModalLabel').append(this.address);
+    				$('#address').html('');
+	    			$('#address').append(this.address);
 
 	    			// PRICE
-	    			// $('#myModalLabel').html('');
-	    			// $('#myModalLabel').append("$" + this.price);
+	    			$('#price').html('');
+	    			$('#price').append("$" + this.price);
 
 	    			// MONTHLY PROPERTY TAXES
 	    			$('#taxes').html('');
@@ -67,8 +67,6 @@ function initMap() {
 		}
 	})
 
-
-
 //Google Maps Center
 	var myLatLng = {lat: 33.4500, lng: -112.0667};
 // Create a map object and specify the DOM element for display.
@@ -78,33 +76,61 @@ function initMap() {
 	  zoom: 14
 	});
 
-// //Zillow API Integration
-// 	var address = "2030+west+whisper+rock+trail"
-// 	var citystatezip = "phoenix,arizona85085"
-// 	var zillow_id = "X1-ZWz1a092wkhngr_ac8os"
 
-//     $.ajax({
-//         url: "http://cors.io/?u=http://www.zillow.com/webservice/GetSearchResults.htm?zws-id="+zillow_id+"&address="+address+"&citystatezip="+citystatezip,
-//         type: 'GET',
-//         dataType: "xml",
-//         success: function (data) {
-//         	console.log('ASD:', data);
-//         },
-//         then: function (then) {
-//         	console.log(then);
-//         },
-//         error: function (err) {
-//         	console.log('ERR', err); 
-//         	err.then(function (resolvedPromise) {
-//         		console.log('P', resolvedPromise); 
-//         	});
-//         }
-//     })
+  var input = /** @type {!HTMLInputElement} */(
+      document.getElementById('pac-input'));
+
+  var autocomplete = new google.maps.places.Autocomplete(input);
+  autocomplete.bindTo('bounds', map);
+
+  var infowindow = new google.maps.InfoWindow();
+  var marker = new google.maps.Marker({
+    map: map,
+    anchorPoint: new google.maps.Point(0, -29)
+  });
+
+  autocomplete.addListener('place_changed', function() {
+    infowindow.close();
+    marker.setVisible(false);
+    var place = autocomplete.getPlace();
+    if (!place.geometry) {
+      window.alert("Autocomplete's returned place contains no geometry");
+      return;
+    }
+
+    // If the place has a geometry, then present it on a map.
+    if (place.geometry.viewport) {
+      map.fitBounds(place.geometry.viewport);
+    } else {
+      map.setCenter(place.geometry.location);
+      map.setZoom(17);  // Why 17? Because it looks good.
+    }
+    marker.setIcon(/** @type {google.maps.Icon} */({
+      url: place.icon,
+      size: new google.maps.Size(71, 71),
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(17, 34),
+      scaledSize: new google.maps.Size(35, 35)
+    }));
+    marker.setPosition(place.geometry.location);
+    marker.setVisible(true);
+
+    var address = '';
+    if (place.address_components) {
+      address = [
+        (place.address_components[0] && place.address_components[0].short_name || ''),
+        (place.address_components[1] && place.address_components[1].short_name || ''),
+        (place.address_components[2] && place.address_components[2].short_name || '')
+      ].join(' ');
+    }
+
+    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+    infowindow.open(map, marker);
+  });
 }
 
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').focus()
 })
-
 
 
