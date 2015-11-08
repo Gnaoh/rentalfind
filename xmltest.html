@@ -1,0 +1,58 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+</script>
+</head>
+<body>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	var url="http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz1f08y9m8u8b_9zlkj&address=2030+west+whisper+rock+trail&citystatezip=phoenix,arizona85085&rentzestimate=true";
+	//url="https://raw.githubusercontent.com/Gnaoh/rentalfind/master/GetSearchResults.xml"
+	console.log(url);
+	
+	function parseInput(inputdata){
+		//var response=inputdata.getElementsByTagName("response");
+		var results=inputdata.getElementsByTagName("results");
+		var result=inputdata.getElementsByTagName("result");
+		var i
+		for(i=0;i<result.length;i++){
+			//result[i] is each listing
+			console.log(result[i].getElementsByTagName("zpid")[0].innerHTML); //display pid for each listing
+			rentAmount=result[i].getElementsByTagName("rentzestimate")[0].getElementsByTagName("amount")[0].innerHTML;
+			console.log("Rent: $"+rentAmount);
+			//rentRange=result[i].getElementsByTagName("rentzestimate")[0].getElementByTagName("valuationRange")[0];
+			//console.log("low: "+rentRange.getElementsByTagName("low")[0]);
+			//console.log("high: "+rentRange.getElementsByTagName("high")[0]);
+			//console.log(rentRange)
+			//console.log(result[i]);
+		}
+		//getElementsByTagName
+		//console.log(zpid[0].innerHTML)
+		//var results=inputdata.getElementsByTagName("results")
+	}
+	
+	var xmldata = new XMLHttpRequest();
+	
+	xmldata.onreadystatechange = function() {
+		if (xmldata.readyState == 4) {
+			parseInput(xmldata.responseXML);
+		}
+	}
+	
+	
+    xmldata.overrideMimeType('text/xml');
+	xmldata.open("GET", url, true);
+	
+	xmldata.send();
+	console.log(xmldata)
+	var xmlDoc
+	
+	/*xmlDoc = document.implementation.createDocument("", "", null);
+	xmlDoc.onload = readXML;
+	xmlDoc.load(url);
+	xmlloaded = true;
+	*/
+})
+</script>
+</body>
