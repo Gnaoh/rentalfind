@@ -101,3 +101,81 @@ div#map {
   font-size: 13px;
   font-weight: 300;
 }
+
+/*HOME MODAL*/
+
+.big-box
+{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  color:white;
+}
+.big-box h2
+{
+  text-align: center;
+  margin-top: 20%;
+  padding: 20px;
+  width: 100%;
+  font-size: 1.8em;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+cursor:pointer;
+}
+@media screen and (max-width: 46.5em) 
+{
+  .big-box h2
+  {
+    font-size:16px;
+    padding-left:0px;
+  }
+}
+@media screen and (max-width: 20.5em) 
+{
+  .big-box h2
+  {
+    font-size:12px;
+    padding-left:0px;
+    margin-top:30%;
+    }
+}
+.modal-dialog2 {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin:0;
+}
+.modal-content2 {
+  background-image: url("http://dontdrinkbeer.files.wordpress.com/2012/06/1338658237717.png");
+  height: 100vh;
+  border-radius: 0;
+  color: white;
+  overflow: auto;
+  width: 100vw;
+}
+}
+.modal-title2
+{
+  font-size: 3em;
+  font-weight: 300;
+  margin: 0 0 20px 0;
+}
+.modal-content-one2
+{
+  background-color:white;
+}
+.modal-content-two2
+{
+  background-color:#E6537D;
+}
+.close2
+{
+  color:white ! important;
+  opacity:1.0;
+}
+
+.btn {
+  margin-top: 75vh;
+  padding: 15px 20px;
+}

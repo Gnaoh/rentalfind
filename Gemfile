@@ -27,6 +27,8 @@ gem 'json', '~> 1.8', '>= 1.8.3'
 
 gem 'pry-byebug'
 
+gem 'gon'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
