@@ -31,28 +31,19 @@ function initMap() {
 	  zoom: 15
 	});
 
-// //Zillow API Integration
-// $(document).ready(function () {
-// 	var address = "2030+west+whisper+rock+trail"
-// 	var citystatezip = "phoenix,arizona85085"
-// 	var zillow_id = "X1-ZWz1a092wkhngr_ac8os"
+//Zillow API Integration
+	var address = "2030+west+whisper+rock+trail"
+	var citystatezip = "phoenix,arizona85085"
+	var zillow_id = "X1-ZWz1a092wkhngr_ac8os"
 
-//     $.ajax({
-//         url: "http://www.zillow.com/webservice/GetSearchResults.htm?zws-id="+zillow_id+"&address="+address+"&citystatezip="+citystatezip,
-//         headers: { 'Access-Control-Allow-Origin': '*' },
-//         crossDomain: true,
-//         type: 'GET',
-//         dataType: "json",
-//         success: function parseXml(data) {
-//         	console.log(data);
-//         }
-//     });
-// });
-
-// function parseXml(xml) {
-// var item = $(xml).find("item");
-
-//   $(item).each(function() {
-//     $("#results").append($("enclosure").attr("url").text() + "<br />");
-//   });
-// }
+    $.ajax({
+        url: "http://www.zillow.com/webservice/GetSearchResults.htm?zws-id="+zillow_id+"&address="+address+"&citystatezip="+citystatezip,
+        headers: { 'Access-Control-Allow-Origin': '*' },
+        crossDomain: true,
+        type: 'GET',
+        dataType: "json",
+        success: function parseXml(data) {
+        	console.log(data);
+        }
+    })
+};
