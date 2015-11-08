@@ -4,16 +4,14 @@ require 'active_support/all'
 require 'json'
 
   def index
-      numberofhouses=20;
+      numberofhouses=100;
     retsly = JSON.parse(Net::HTTP.get(URI.parse("https://rets.io/api/v1/armls/listings?access_token=fc54b2a2ebacc3c920a63e2b016a215c&limit="+numberofhouses.to_s+"&near=33.4500,-112.0667&radius=100mi")))["bundle"]
     for i in 0..retsly.length-1
     house=retsly[i]
     #does not account for unit number of apartments
    compositeAddress=house["streetNumber"]+"+"+house["streetName"]+"&citystatezip="+house["city"]+","+house["state"]+house["zipCode"]
    #puts(compositeAddress+"*******************")
-    zillowurl='http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz1f09lxzlhxn_agge7&address='+compositeAddress+'&rentzestimate=true'
-  puts(zillowurl)
-  puts(i)
+    zillowurl='http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz1f09tu41pu3_am2o3&address='+compositeAddress+'&rentzestimate=true'
      zillowXML = Hash.from_xml(Net::HTTP.get(URI.parse(zillowurl)))
      if zillowXML['searchresults']['response']!=nil
      zillowData=zillowXML['searchresults']['response']['results']
@@ -53,7 +51,6 @@ require 'json'
     end
       retsly[i]["rent"]=resultarray
       retsly[i]['zpid']=zpid #array
-     puts(resultarray)
     end
     #binding.pry
      gon.result = retsly.select{|y| y["rent"][0]>0&&y["rent"].length==1}#result
