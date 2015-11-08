@@ -1,4 +1,4 @@
-<p class="navbar-text">Rental Find</a></p>
+<ce<p class="navbar-text">Rental Find</a></p>
 
 <div id="map"></div>
 
@@ -6,52 +6,30 @@
 <div id='myModal' class="myModal modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
  		<div class="modal-dialog">
 	   		<div class="modal-content">
-
 			   <div class="modal-header">
 			           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			           <h4 class="modal-title" id="myModalLabel">2030 W whisper rock trail</h4>
+			           <center><h1 class="modal-title" >100% Cash Positive</h1><br></center>
 			   </div>
-
-	       		<!-- <p class='myLatLng'></p> -->
-	       		<div class='modal-body'>
-
+			   <center> <h4 id="myModalLabel"></h4></center>
+	      <div class='modal-body'>
 					<ul class="list-group">
-					  <li class="list-group-item">Rental Income: <p class="rentalincome">Data Here....</p>
-
-
-
-					  </li>
-					  <li class="list-group-item">Monthly Mortgage Payment: <p class="mortgagepayment"></p>Data Here....</li>
-					  <li class="list-group-item">Property Taxes: <p class="taxes"></p>Data Here....</li>
-					  <li class="list-group-item">Homeowners Insurance: <p class="insurance"></p>Data Here....</li>
+					  <li class="list-group-item">Rental Income: <p id="rentalIncome"></p></li>
+					  <li class="list-group-item">Monthly Mortgage Payment: <p id="mortgagePayment"></p></li>
+					  <li class="list-group-item">Property Taxes: <p id="taxes"></p></li>
+					  <li class="list-group-item">Homeowners Insurance: <p id="insurance"></p></li>
 					</ul>
-
 				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-				  <div class="panel panel-default">
-				    <div class="panel-heading" role="tab" id="headingOne">
-				      <h4 class="panel-title">
-				        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-				          Collapsible Group Item #1
-				        </a>
-				      </h4>
-				    </div>
-				    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-				      <div class="panel-body">
-				        	<img src="http://www.zillow.com/app?chartDuration=1year&chartType=partner&height=150&page=webservice%2FGetChart&service=chart&showPercent=true&width=300&zpid=48749425">
-				      </div>
-				    </div>
-				  </div>
 				  <div class="panel panel-default">
 				    <div class="panel-heading" role="tab" id="headingTwo">
 				      <h4 class="panel-title">
 				        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-				          Collapsible Group Item #2
+				          Description
 				        </a>
 				      </h4>
 				    </div>
 				    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 				      <div class="panel-body">
-				     	...
+				     	<p id="description"></p>
 				      </div>
 				    </div>
 				  </div>
@@ -59,7 +37,7 @@
 				    <div class="panel-heading" role="tab" id="headingThree">
 				      <h4 class="panel-title">
 				        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-				          Collapsible Group Item #3
+				          Secret Algorithm
 				        </a>
 				      </h4>
 				    </div>
@@ -70,16 +48,15 @@
 				    </div>
 				  </div>
 				</div>
+					<ul class="list-group">
+					  <li class="list-group-item" id="property_image"><img class="property_img" src="http://o.homedsgn.com/wp-content/uploads/2013/02/a-house-19-800x548.jpg"></li>
+					</ul>
+
 			</div>
    		</div>
  	</div>
 </div>
 		
-
-
-
-
-
 
 <!-- 
        	<div class='summary'>
@@ -102,6 +79,4 @@
 	    </div>	    
  -->
 
-
-  <p><%= @xmldata %></p>
 
