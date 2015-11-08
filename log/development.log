@@ -5966,3 +5966,45 @@ Started GET "/assets/property.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dd
 
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-11-07 16:59:49 -0800
+
+
+Started GET "/" for ::1 at 2015-11-07 17:49:12 -0800
+Processing by PropertyController#index as HTML
+  Rendered property/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 116ms (Views: 115.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/retsly.self-0130c577d6b8a889b170f2a75086fab88d04fcd82b94392b274c8906c23781be.js?body=1" for ::1 at 2015-11-07 17:49:12 -0800
+
+
+Started GET "/" for ::1 at 2015-11-07 17:49:23 -0800
+Processing by PropertyController#index as HTML
+  Rendered property/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 128ms (Views: 127.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main.self-ac16853b2b26dabf1948fd1ce3146b577e7820b963b900cac101274c58479981.css?body=1" for ::1 at 2015-11-07 17:49:23 -0800
+
+
+Started GET "/assets/property.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-07 17:49:23 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-07 17:49:23 -0800
+
+
+Started GET "/assets/property.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-07 17:49:23 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-07 17:49:23 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-07 17:49:23 -0800
+
+
+Started GET "/assets/retsly.self-16aa04a50018ae39fac3097e525ea2bc81b26e9d73f30ca24837cc11f1b91648.js?body=1" for ::1 at 2015-11-07 17:49:23 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-11-07 17:49:23 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-11-07 17:49:23 -0800
