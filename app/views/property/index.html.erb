@@ -1,13 +1,107 @@
- <div id="map"></div>
+<p class="navbar-text">Rental Find</a></p>
+
+<div id="map"></div>
+
 <!-- Large modal -->
 <div id='myModal' class="myModal modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
- <div class="modal-dialog modal-lg">
-   <div class="modal-content">
-       <!-- <p class='myLatLng'></p> -->
-        <h4 class='address'>123 Wisteria Lane, CA, 930122</h4>
-        <h5 class='price'>US$120000</h5>
-        <h5 class='yield'>5.3%</h5>
-        <h5 class='cashflow'>US$150 / month</h5>
-   </div>
- </div>
+ 		<div class="modal-dialog">
+	   		<div class="modal-content">
+
+			   <div class="modal-header">
+			           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			           <h4 class="modal-title" id="myModalLabel">2030 W whisper rock trail</h4>
+			   </div>
+
+	       		<!-- <p class='myLatLng'></p> -->
+	       		<div class='modal-body'>
+
+					<ul class="list-group">
+					  <li class="list-group-item">Rental Income: <p class="rentalincome">Data Here....</p>
+
+
+
+					  </li>
+					  <li class="list-group-item">Monthly Mortgage Payment: <p class="mortgagepayment"></p>Data Here....</li>
+					  <li class="list-group-item">Property Taxes: <p class="taxes"></p>Data Here....</li>
+					  <li class="list-group-item">Homeowners Insurance: <p class="insurance"></p>Data Here....</li>
+					</ul>
+
+				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				  <div class="panel panel-default">
+				    <div class="panel-heading" role="tab" id="headingOne">
+				      <h4 class="panel-title">
+				        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+				          Collapsible Group Item #1
+				        </a>
+				      </h4>
+				    </div>
+				    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+				      <div class="panel-body">
+				        	<img src="http://www.zillow.com/app?chartDuration=1year&chartType=partner&height=150&page=webservice%2FGetChart&service=chart&showPercent=true&width=300&zpid=48749425">
+				      </div>
+				    </div>
+				  </div>
+				  <div class="panel panel-default">
+				    <div class="panel-heading" role="tab" id="headingTwo">
+				      <h4 class="panel-title">
+				        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				          Collapsible Group Item #2
+				        </a>
+				      </h4>
+				    </div>
+				    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+				      <div class="panel-body">
+				     	...
+				      </div>
+				    </div>
+				  </div>
+				  <div class="panel panel-default">
+				    <div class="panel-heading" role="tab" id="headingThree">
+				      <h4 class="panel-title">
+				        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				          Collapsible Group Item #3
+				        </a>
+				      </h4>
+				    </div>
+				    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+				      <div class="panel-body">
+				        ...
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
+   		</div>
+ 	</div>
 </div>
+		
+
+
+
+
+
+
+<!-- 
+       	<div class='summary'>
+	        <div class='snapshot'><p class='formatting'>Monthly Cashflow:</p><p class='cashflow'></div>
+
+
+	        <div class='snapshot'>US$120000</div>
+	        <div class='snapshot'>5.3%</div>
+	    </div>
+
+"<div class='delayed'><p id='status'>Status:<p>" + "<p id='statuses'>" + flightstats.status + " - Delayed " + data.flightStatuses[i].delays.arrivalGateDelayMinutes + " minutes</p></div>"
+
+
+	    <div class='mortgage'>
+	        <p class='payments'>US$2,500 / month</p>
+	    </div>
+
+	    <div class='financials'>
+	        <p class='insurance'>US$2,500 / month</p>
+	    </div>	    
+ -->
+
+
+  <p><%= @xmldata %></p>
+

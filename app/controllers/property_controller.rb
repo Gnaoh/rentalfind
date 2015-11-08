@@ -1,31 +1,16 @@
 class PropertyController < ApplicationController
+  require 'open-uri'
+  require 'json'
+  require 'active_support/core_ext/hash'
+  	def index
+        url="http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz1f09tu41pu3_am2o3&address=2030+west+whisper+rock+trail&citystatezip=phoenix,arizona85085&rentzestimate=true"
+          xmldata=""
+          open(url) do |uri|
+          uri.each_line{|line| xmldata=line}
 
-	skip_before_filter :verify_authenticity_token
-
-  before_filter :cors_preflight_check
-  after_filter :cors_set_access_control_headers
-
-  def cors_set_access_control_headers
-    headers['Access-Control-Allow-Origin'] = '*'
-    headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'
-    headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type, Accept, Authorization, Token'
-    headers['Access-Control-Max-Age'] = "1728000"
-  end
-
-  def cors_preflight_check
-    if request.method == 'OPTIONS'
-      headers['Access-Control-Allow-Origin'] = '*'
-      headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'
-      headers['Access-Control-Allow-Headers'] = 'X-Requested-With, X-Prototype-Version, Token'
-      headers['Access-Control-Max-Age'] = '1728000'
-
-      render :text => '', :content_type => 'text/plain'
+          @xmldata = JSON.pretty_generate(Hash.from_xml(xmldata))
     end
   end
-
-
-	def index
-	end
-	
-
 end
+
+

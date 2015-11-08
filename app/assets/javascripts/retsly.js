@@ -9,7 +9,7 @@ function initMap() {
 	  type: 'GET',
 	  dataType: 'json',
 	  success: function (data) {
-	   console.log(data);
+	   // console.log(data);
 			for (i = 0; i < data.bundle.length; i++) {
 				address = data.bundle[i].address;
 				lng = data.bundle[i].coordinates[0];
@@ -45,38 +45,33 @@ function initMap() {
 	  zoom: 15
 	});
 
-//Zillow API Integration
-
-var zillow_id = 'X1-ZWz1f09a3sx62z_a80zd'; //the zillow web service ID that you got from your email
-
-	var address = "2030+west+whisper+rock+trail"
-	var citystatezip = "phoenix,arizona85085"
-
-	var url = "http://www.zillow.com/webservice/GetSearchResults.htm?zws-id="+zillow_id+"&address="+address+"&citystatezip="+citystatezip;
-
-	var jqxhr = $.ajax({
-		url: url
-		})
-		.done(function(data) {
-		console.log(data);
-	});
-}
-
-$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').focus()
-})
-
 // //Zillow API Integration
 // 	var address = "2030+west+whisper+rock+trail"
 // 	var citystatezip = "phoenix,arizona85085"
 // 	var zillow_id = "X1-ZWz1a092wkhngr_ac8os"
 
 //     $.ajax({
-//         url: "http://www.zillow.com/webservice/GetSearchResults.htm?zws-id="+zillow_id+"&address="+address+"&citystatezip="+citystatezip,
+//         url: "http://cors.io/?u=http://www.zillow.com/webservice/GetSearchResults.htm?zws-id="+zillow_id+"&address="+address+"&citystatezip="+citystatezip,
 //         type: 'GET',
 //         dataType: "xml",
-//         success: function parseXml(data) {
-//         	console.log(data);
+//         success: function (data) {
+//         	console.log('ASD:', data);
+//         },
+//         then: function (then) {
+//         	console.log(then);
+//         },
+//         error: function (err) {
+//         	console.log('ERR', err); 
+//         	err.then(function (resolvedPromise) {
+//         		console.log('P', resolvedPromise); 
+//         	});
 //         }
 //     })
+}
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})
+
+
 
